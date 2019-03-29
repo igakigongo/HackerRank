@@ -1,23 +1,20 @@
 <script type="text/javascript">
 
-  getMoneySpent = (keyboards, drives, b) => {
+  const getMoneySpent = (keyboards, drives, b) => {
 
-    let maxAmountToSpend = -1,
-        maxSpendOnDrive = 0,
-        maxSpendOnKeyboard = 0;
+    const sortedKeyboardPrices = Array.from(new Set(keyboards))
+      .sort((a, b) => a - b);
 
-    for(let i = 0; i < keyboards.length; i++) {
-      for (let j = 0; j < drives.length; j++) {
+    const sortedDrivePrices = Array.from(new Set(drives))
+    .sort((a, b) => a - b);
 
-          let exp = keyboards[i] + drives[j];
-          // maybe I have the right combination
-          // but you might have duplicate combinations with this kind of loop
-          // can spend
-          if (exp <= b && exp > maxAmountToSpend){
-            maxAmountToSpend = exp;
-          }
-      }
-    }
+    let maxAmountToSpend = -1;
+    sortedDrivePrices.forEach(dp => {
+      sortedKeyboardPrices.forEach(kp => {
+        if ((dp + kp) <= b && (dp + kp) > maxAmountToSpend)
+          maxAmountToSpend = (dp + kp);
+      });
+    });
 
     return maxAmountToSpend;
   }
