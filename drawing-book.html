@@ -1,28 +1,8 @@
 <script type="text/javascript">
-  var View = (previous, next, left, right) => {
-    this.previous = previous;
-    this.next = next;
-    this.left = left;
-    this.right = right;
+ const pageCount = (n, p) => (n - p) > (p - 1) ?
+  parseInt(p / 2) - parseInt(1 / 2) :
+  parseInt(n / 2) - parseInt(p / 2);
 
-    getPrevious = () => {
-      if (this.left == 1) return null;
-      else return this.previous;
-    }
-
-    getNext = () => this.next;
-
-    return {
-      prev: previous,
-      next: next,
-      left: left,
-      right: right
-    }
-  }
-
-
-  pageCount = (n, p) => p;
-
-  console.log(pageCount(6, 2));
-  console.log(pageCount(5, 4));
+ console.log(pageCount(6, 2));
+ console.log(pageCount(5, 4));
 </script>
