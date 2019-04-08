@@ -1,8 +1,4 @@
 <script type="text/javascript">
- String.prototype.nullableCharAt = function(index) {
-  return typeof(this.charAt(index)) === 'undefined' ? '' : this.charAt(index);
- };
-
  const encryption = (s) => {
   let rows = Math.floor(Math.sqrt(s.length));
   let cols = Math.ceil(Math.sqrt(s.length));
@@ -11,7 +7,7 @@
   let str = '';
   for (let i = 0; i < cols; i++) {
    for (let j = 0; j < rows; j++) {
-    str += s.nullableCharAt(i + (j * cols));
+    str += s.charAt(i + (j * cols));
    }
    str += ' ';
   }
