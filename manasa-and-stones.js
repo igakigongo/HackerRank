@@ -1,29 +1,3 @@
-// Class to represent a node
-/*function Node(val) {
-	// value
-	this.val = val;
-
-	// children
-	this.left = null;
-	this.right = null;
-}
-
-Node.prototype.insert = function(left, right) {
-	this.left = new Node(this.val + left);
-	this.right = new Node(this.val + right);
-};
-
-const traverseAndInsert = function(root, depth, leftVal, rightVal) {
-	if (root.left === null || root.right === null) {
-		root.insert(leftVal, rightVal);
-		if (depth === 1) return;
-		depth--;
-	}
-
-	traverseAndInsert(root.left, depth, leftVal, rightVal);
-	traverseAndInsert(root.right, depth, leftVal, rightVal);
-};*/
-
 const stones = (n, a, b) => {
 	let depth = 1;
 	let final = new Set([a, b]);
@@ -40,5 +14,20 @@ const stones = (n, a, b) => {
 	return [...final].sort((x, y) => x - y);
 };
 
-console.log(stones(3, 1, 2));
-console.log(stones(4, 10, 100));
+const stones2 = (n, a, b) => {
+	const start = Math.min(a, b) * (n - 1);
+
+	if (a === b) return [start];
+
+	const diff = Math.abs(b - a);
+	const array = [];
+	for (let i = 0; i < n; i++) {
+		array.push(start + (diff * i));
+	}
+	return array;
+};
+
+console.log(stones2(3, 2, 2));
+console.log(stones2(4, 10, 100));
+console.log(stones2(5, 10, 100));
+console.log(stones2(10, 10, 100));
