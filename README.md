@@ -1,9 +1,9 @@
-# HACKER RANK CHALLENGES
+## HACKER RANK CHALLENGES
 The repository contains a list of challenges completed during my first months at [microverse](https://www.microverse.org).
 
 The full list of challenges can be found [here](https://www.hackerrank.com/contests/microverse-coding-challenges/challenges).
 
-## Completed Challenges
+#### Completed Challenges
 
 | Challenge      |
 | -------------- |
@@ -29,6 +29,6 @@ The full list of challenges can be found [here](https://www.hackerrank.com/conte
 | [Halloween Sale](https://www.hackerrank.com/contests/microverse-coding-challenges/challenges/halloween-sale)   |
 | [Palindrome Index](https://www.hackerrank.com/contests/microverse-coding-challenges/challenges/palindrome-index)   |
 
-## TODO
+#### TODO
  - Install Jest and Test the code without any console logs
  - Complete more challenges.
