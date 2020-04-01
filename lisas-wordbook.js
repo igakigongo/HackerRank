@@ -1,18 +1,18 @@
-const workbook = (n, k, arr) => {
+const workbook = (_, k, arr) => {
   let pages = 0;
   let startPage = 1;
   let endPage = 0;
 
-  return arr.reduce((a, c, i) => {
-    pages = c % k === 0 ? c / k : parseInt(c / k) + 1;
+  return arr.reduce((a, c) => {
+    pages = c % k === 0 ? c / k : parseInt(c / k, 10) + 1;
     endPage = startPage + pages - 1;
 
     let problem = 0;
     let specials = 0;
-    for (let start = startPage; start <= endPage; start++) {
-      for (let i = 0; i < k; i++) {
-        problem++;
-        if (problem === start) specials++;
+    for (let start = startPage; start <= endPage; start += 1) {
+      for (let i = 0; i < k; i += 1) {
+        problem += 1;
+        if (problem === start) specials += 1;
         if (problem >= c) break;
       }
     }
