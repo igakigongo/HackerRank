@@ -32,3 +32,6 @@ The full list of challenges can be found [here](https://www.hackerrank.com/conte
 #### TODO
  - Install Jest and Test the code without any console logs
  - Complete more challenges.
+
+#### Contributors
+ - [Edward Iga Kigongo](github.com/igakigongo)
