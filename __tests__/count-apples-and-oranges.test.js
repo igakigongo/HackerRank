@@ -1,4 +1,4 @@
-import count, { totalInRange } from '../count-apples-and-oranges';
+import count, { totalInRange } from '../src/count-apples-and-oranges';
 
 describe('count apples and oranges', () => {
   test('one fruit falls on the house', () => {

@@ -1,4 +1,4 @@
-import { transformGrade } from '../grading-students';
+import { transformGrade } from '../src/grading-students';
 
 describe('grading students', () => {
   it('does not round a failing grade', () => {

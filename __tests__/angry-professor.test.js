@@ -1,4 +1,4 @@
-import cancelled, { YES, NO } from '../angry-professor';
+import cancelled, { YES, NO } from '../src/angry-professor';
 
 describe('angry professor', () => {
   test('should be cancelled', () => {

@@ -1,4 +1,4 @@
-import timeInWords from '../the-time-in-words';
+import timeInWords from '../src/the-time-in-words';
 
 describe('Time In Words', () => {
   test('minutes to', () => {
