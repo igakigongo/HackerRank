@@ -1,14 +1,15 @@
-// opt for break instead of return in the for loop
-/* let early = 0;
-	for (let i = 0; i < a.length; i++){
-	  if (a[i] <= 0){
-	    early++;
-	    if (early >= k) break;
-	  }
-	}
-	return early >= k ? 'YES': 'NO'; */
+export const YES = 'YES';
+export const NO = 'NO';
 
-const angryProfessor = (k, a) => (a.reduce((a, c) => a += c < 1 ? 1 : 0, 0) >= k ? 'NO' : 'YES');
+const cancelled = (threshold, arrivalTimes) => {
+  let early = 0;
+  for (let i = 0; i < arrivalTimes.length; i += 1) {
+    early += arrivalTimes[i] <= 0 ? 1 : 0;
+    if (early >= threshold) {
+      return NO;
+    }
+  }
+  return YES;
+};
 
-console.log(angryProfessor(3, [-1, -3, 4, 2]));
-console.log(angryProfessor(2, [0, -1, 2, 1]));
+export default cancelled;
