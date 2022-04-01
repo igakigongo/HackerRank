@@ -4,20 +4,14 @@ const reversedNumber = (num) => num
   .reverse()
   .join('');
 
-const absoluteMapper = (num) => Math
+const absoluteDiff = (num) => Math
   .abs(num - parseInt(reversedNumber(num), 10));
 
 const beautifulDays = (start, end, divisor) => {
-  const array = [];
+  let total = 0;
   for (let k = start; k <= end; k += 1) {
-    array.push(k);
+    total += (absoluteDiff(k) % divisor === 0) * 1;
   }
-
-  const total = array.map(absoluteMapper)
-    .reduce((accumulated, current) => {
-      if (current % divisor === 0) return accumulated + 1;
-      return accumulated;
-    }, 0);
 
   return total;
 };
